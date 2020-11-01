@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2020 at 11:33 AM
+-- Generation Time: Nov 01, 2020 at 03:36 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -43,8 +43,10 @@ CREATE TABLE `problems` (
 --
 
 INSERT INTO `problems` (`pid`, `problem_title`, `problem_statement`, `testcase_input1`, `testcase_output1`, `testcase_input2`, `testcase_output2`) VALUES
-(1, 'Solve Me First', 'Complete the function solveMeFirst to compute the sum of two integers.\r\n\r\nFunction prototype:\r\n\r\nint solveMeFirst(int a, int b);\r\n\r\nwhere,\r\n\r\na is the first integer input.\r\nb is the second integer input\r\nReturn values\r\n\r\nsum of the above two integers\r\nSample Input\r\n\r\na = 2\r\nb = 3\r\nSample Output\r\n\r\n5', '2\r\n10', '12', '5\r\n5', '10'),
-(2, 'Difference of 2 Numbers', 'Write a program to find the difference between 2 numbers.\r\nThe program should take 2 numbers as input from the user and should print its difference.\r\nSample Test Case Input:\r\n6\r\n4\r\n\r\nSample Output:\r\n2', '5\r\n4', '1', '4\r\n5', '-1');
+(1, 'Array Sum', 'Write a program to find the sum of elements of an array.\r\nFirst line contains the length n of the array.\r\nSecond line consists of n elements.\r\nSample Input:\r\n5\r\n1 4 5 6 7\r\nSample Output:\r\n23\r\n\r\n', '2\r\n0 0', '0', '4\r\n1 1 1 1', '4'),
+(2, 'Difference of 2 Numbers', 'Write a program to find the difference between 2 numbers.\r\nThe program should take 2 numbers as input from the user and should print its difference.\r\nSample Test Case Input:\r\n6\r\n4\r\n\r\nSample Output:\r\n2', '5\r\n4', '1', '4\r\n5', '-1'),
+(3, 'Greatest of 2', 'Write a program to find the greatest number out of 2.\r\nThe first line contains the first number.\r\nThe second line contains the second number.\r\n\r\nSample Input:\r\n2\r\n3\r\n\r\nSample Output\r\n3', '10\r\n1', '10', '5\r\n5', '5'),
+(4, 'Sort an Array', 'Write a program to sort an array in ascending order.\r\nThe first line contains the length of the array.\r\nThe second line contains the elements.\r\n\r\nSample Input:\r\n5\r\n3 2 6 4 7\r\n\r\nSample Output:\r\n2 3 4 6 7 ', '3\r\n9 8 7', '7 8 9', '6\r\n1 2 3 4 5 6', '1 2 3 4 5 6');
 
 -- --------------------------------------------------------
 
@@ -58,6 +60,13 @@ CREATE TABLE `problems_user` (
   `uid` int(11) NOT NULL,
   `problem_answer` varchar(2000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `problems_user`
+--
+
+INSERT INTO `problems_user` (`id`, `pid`, `uid`, `problem_answer`) VALUES
+(1, 1, 1, 'I did it');
 
 -- --------------------------------------------------------
 
@@ -77,8 +86,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`uid`, `username`, `password`, `email`) VALUES
-(1, 'Tanveer', '$2y$10$KQp355LnUvnvQmi3vC/uqeQ7HIi0Vko7nAC7P8AIrnM6e1qm5xiSG', 'germinostiltion@gmail.com'),
-(6, 'Hackocracy', '$2y$10$lyQBIb6UWBheG9ISMkIk8OeDkaACUM7no9qBNXMk2rROpl0H3yySq', 'admin@admin.com');
+(1, 'Tanveer', '$2y$10$o7GtsvKahzFRP.QKzDYym.mVqG4MFPrqzsFe1/6/qa7ZWiTF.mNni', 'germinostiltion@gmail.com'),
+(6, 'Admin', '$2y$10$lyQBIb6UWBheG9ISMkIk8OeDkaACUM7no9qBNXMk2rROpl0H3yySq', 'admin@admin.com');
 
 --
 -- Indexes for dumped tables
@@ -110,13 +119,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `problems`
 --
 ALTER TABLE `problems`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `problems_user`
 --
 ALTER TABLE `problems_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`

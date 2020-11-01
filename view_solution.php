@@ -10,6 +10,12 @@ if (isset($_GET['pid'])) {
   $res2 = $conn->prepare($sql2);
   $res2->execute([$pid]);
   $prob = $res2->fetch(PDO::FETCH_ASSOC);
+  
+  $uid = $_SESSION['uid'];
+  $sql3 = "SELECT `problem_answer` FROM `problems_user` WHERE `pid`=? AND `uid`=?;";
+  $res3 = $conn->prepare($sql3);
+  $res3->execute([$pid,$uid]);
+  $solu = $res3->fetch(PDO::FETCH_ASSOC);
 } else {
   header("Location:./problems.php");
 }
@@ -73,7 +79,7 @@ if (isset($_GET['pid'])) {
             <pre><?php echo $prob["problem_statement"] ?></pre>
           </div>
           <div class="col-6 col-xl-6 mb-4 mb-lg-0">
-            <textarea class="text_area"></textarea>
+            <textarea class="text_area"><?php echo $solu["problem_answer"] ?></textarea>
             <button type="submit" class="btn btn-primary">Submit</button>
             <form style="float: right;">
               <div class="form-group">

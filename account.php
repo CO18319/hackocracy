@@ -141,14 +141,6 @@ if (isset($_POST["changepass"])) {
           </form>
         </div>
         <hr />
-        <footer class="pt-5 d-flex justify-content-between">
-          <span>Copyright - Logo</span>
-          <ul class="nav m-0">
-            <li class="nav-item">
-              <a class="nav-link text-secondary" aria-current="page" href="#">Extra Button</a>
-            </li>
-          </ul>
-        </footer>
       </main>
     </div>
   </div>

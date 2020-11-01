@@ -66,9 +66,9 @@ if (!isset($_SESSION["valid"]) || $_SESSION["type"] != "user") {
 
               <div class="card-body">
                 <?php
-                $sql2 = "SELECT * FROM problems where `pid` NOT IN (SELECT `pid` FROM `problems_user` WHERE `uid`=1);";
+                $sql2 = "SELECT * FROM problems where `pid` NOT IN (SELECT `pid` FROM `problems_user` WHERE `uid`=?);";
                 $res2 = $conn->prepare($sql2);
-                $res2->execute();
+                $res2->execute([$_SESSION["uid"]]);
                 $ans2 = $res2->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($ans2 as $prob) :
                 ?>
@@ -88,6 +88,42 @@ if (!isset($_SESSION["valid"]) || $_SESSION["type"] != "user") {
                           <td><a href="view_problem.php?pid=<?php echo $prob["pid"] ?>"><?php echo $prob["problem_title"] ?></a></td>
                           <td width="5%">C++</td>
                           <td width="5%">Python</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                <?php
+                endforeach;
+                ?>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xl-12 mb-4 mb-lg-0">
+            <div class="card">
+              <h5 class="card-header">Solved Problems</h5>
+
+              <div class="card-body">
+                <?php
+                $sql3 = "SELECT * FROM problems where `pid` IN (SELECT `pid` FROM `problems_user` WHERE `uid`=?);";
+                $res3 = $conn->prepare($sql3);
+                $res3->execute([$_SESSION["uid"]]);
+                $ans3 = $res3->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($ans3 as $sprob) :
+                ?>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Problem ID</th>
+                          <th scope="col">Problem Name</th>
+                          <th scope="col"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th width="15%" scope="row"><?php echo $sprob["pid"] ?></th>
+                          <td><a href="view_solution.php?pid=<?php echo $sprob["pid"] ?>"><?php echo $sprob["problem_title"] ?></a></td>
+                          <td width="5%">Solved</td>
                         </tr>
                       </tbody>
                     </table>
