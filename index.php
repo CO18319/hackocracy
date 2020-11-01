@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once("backend/dbconn.php");
-    if (!isset($_SESSION["valid"]) || $_SESSION["type"]!="user") {
+    if (!isset($_SESSION["valid"]) || $_SESSION["type"] != "user") {
         header("Location:./login.php");
     }
     $uid = $_SESSION["uid"];
@@ -28,31 +28,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light p-3">
-        <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
-            <a class="navbar-brand" href="#">
-                Logo
-            </a>
-            <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-        <div class="col-12 col-md-4 col-lg-2">
-        </div>
-        <div class="col-12 col-md-5 col-lg-6 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
-            <div class="mr-3 mt-1">
-                <?php echo $ans["username"] ?>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="account.html">Settings</a></li>
-                    <li><a class="dropdown-item" href="signout.php">Sign out</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php
+    require_once("./navbar.php");
+    ?>
     <div class="container-fluid">
         <div class="row">
             <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -68,7 +46,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="account.html">
+                            <a class="nav-link" href="account.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
                                     <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
                                     <polyline points="13 2 13 9 20 9"></polyline>
@@ -77,7 +55,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="problem.html">
+                            <a class="nav-link" href="problems.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
                                     <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
                                     <polyline points="13 2 13 9 20 9"></polyline>
@@ -105,7 +83,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-xl-12 mb-4 mb-lg-0">
-                        <h6><a href="problems.html">Solve More Problems</a></h6>
+                        <h6><a href="problems.php">Solve More Problems</a></h6>
                     </div>
                 </div>
             </main>
