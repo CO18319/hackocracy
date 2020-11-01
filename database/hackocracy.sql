@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2020 at 05:29 PM
+-- Generation Time: Oct 31, 2020 at 07:17 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -45,7 +45,8 @@ CREATE TABLE `problems` (
 CREATE TABLE `problems_user` (
   `id` int(11) NOT NULL,
   `pid` int(11) NOT NULL,
-  `uid` int(11) NOT NULL
+  `uid` int(11) NOT NULL,
+  `problem_answer` varchar(2000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -109,4 +110,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
