@@ -66,7 +66,7 @@ if (!isset($_SESSION["valid"]) || $_SESSION["type"] != "user") {
 
               <div class="card-body">
                 <?php
-                $sql2 = "SELECT `pid`, `problem_title`, `problem_statement`, `testcase_input1`, `testcase_output1`, `testcase_input2`, `testcase_output2` FROM `problems` WHERE 1;";
+                $sql2 = "SELECT * FROM problems where `pid` NOT IN (SELECT `pid` FROM `problems_user` WHERE `uid`=1);";
                 $res2 = $conn->prepare($sql2);
                 $res2->execute();
                 $ans2 = $res2->fetchAll(PDO::FETCH_ASSOC);
