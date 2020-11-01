@@ -45,7 +45,7 @@
                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item" href="account.html">Settings</a></li>
+                  <li><a class="dropdown-item" href="account.php">Settings</a></li>
                   <li><a class="dropdown-item" href="#">Sign out</a></li>
                 </ul>
               </div>
