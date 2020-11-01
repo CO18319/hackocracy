@@ -12,7 +12,7 @@
 
     $sql2 = "SELECT * FROM problems where pid=?";
     $res2 = $conn->prepare($sql2);
-    $res2->execute([$_REQUEST['id']]);
+    $res2->execute([$_REQUEST['pid']]);
     $ans2 = $res2->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
