@@ -80,16 +80,6 @@ if (isset($_GET['pid'])) {
           </div>
           <div class="col-6 col-xl-6 mb-4 mb-lg-0">
             <textarea class="text_area"><?php echo $solu["problem_answer"] ?></textarea>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <form style="float: right;">
-              <div class="form-group">
-                <label for="languageSelect">Select Language</label>
-                <select class="form-control" id="languageSelect">
-                  <option>C++ g++14</option>
-                  <option>Python</option>
-                </select>
-              </div>
-            </form>
           </div>
         </div>
       </main>
