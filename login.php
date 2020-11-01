@@ -15,8 +15,16 @@ if (filter_has_var(INPUT_POST, 'login')) {
     $ans = $res->fetch(PDO::FETCH_ASSOC);
     if (password_verify($pass, $ans["password"])) {
         $_SESSION["uid"] = $ans["uid"];
+        $_SESSION["username"] = $ans["username"];
         $_SESSION["valid"] = true;
-        header("Location:./index.php");
+        if($email=="admin@admin.com"){
+            $_SESSION["type"]="admin";
+            header("Location:admin/index.php");
+        }
+        else{
+            $_SESSION["type"] = "user";
+            header("Location:./index.php");
+        }
     }
 }
 ?>

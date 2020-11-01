@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once("backend/dbconn.php");
-    if (!isset($_SESSION["valid"])) {
+    if (!isset($_SESSION["valid"]) || $_SESSION["type"]!="user") {
         header("Location:./login.php");
     }
     $uid = $_SESSION["uid"];
