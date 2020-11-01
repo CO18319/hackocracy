@@ -28,8 +28,8 @@
                 echo readfile('program_files/error.txt');
             else
             {
-                $output1 = shell_exec('cat program_files/input.txt | ./a.out');
-                $output2 = shell_exec('cat program_files/input2.txt | ./a.out');
+                $output1 = shell_exec('cat program_files/input.txt | program_files/./a.out');
+                $output2 = shell_exec('cat program_files/input2.txt | program_files/./a.out');
                 if($output1 == $ans['testcase_output1'] && $output2 == $ans['testcase_output2'])
                     echo "Success";
                 else
