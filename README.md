@@ -1,4 +1,4 @@
-### CodeJudge (Hackocracy)
+# CodeJudge (Hackocracy)
 
 ## Project Description
 
@@ -55,10 +55,10 @@ This module can run on any Linux machine. Some modifications need to be done for
 
 ## Features
 
-Easy to use
-Open Source
-Platform Independent
-Leaderboard Access.
-Tutorial + Practice in one place.
+1. Easy to use
+2. Open Source
+3. Platform Independent
+4. Leaderboard Access.
+5. Tutorial + Practice in one place.
 
 Video Link: https://drive.google.com/drive/folders/1QwMZpIFXD0FQ9X4ojrvHwpIO2Ljq7_nv?usp=sharing
